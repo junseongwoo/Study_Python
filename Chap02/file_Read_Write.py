@@ -34,5 +34,14 @@ text = open_file.readlines()
 
 open_file.close()
 
+'''
+with 구문을 사용하면 간편하게 파일을 열 수 있습니다.
+이 경우 명시정으로 파일을 close 하지 않아도 되는데
+파이썬이 들여쓰기가 끝나는 위치에서 파일을 닫고 리소스를 자동으로 해제해 주기 때문입니다.
+'''
 
+with open(file_path, 'r') as open_file:
+    text = open_file.readlines()
 
+print(text[2])
+print(open_file.closed)
