@@ -43,5 +43,20 @@ with 구문을 사용하면 간편하게 파일을 열 수 있습니다.
 with open(file_path, 'r') as open_file:
     text = open_file.readlines()
 
-print(text[2])
-print(open_file.closed)
+#print(text[2])
+#print(open_file.closed)
+
+
+'''
+파일에 쓰기를 하려면 w를 인수로 하는 쓰기 모드를 사용해야 합니다.
+direnv 툴은 일부 개발 환경을 자동으로 설정하는 데 사용 되며, 
+.envrc라는 파일에 환경 변수와 애플리케이션 런타임을 정의해두면 direnv가 해당 파일이 있는 디렉터리에 이를 설정해 줍니다.
+write 플래그로 파일을 열어서 환경 변수 STAGE PROD로, 
+TABLE_ID는 token-storage-1234로 설정할 수 있습니다.
+'''
+
+text = '''export STAGE=PROD
+export TABLE_ID = token-storage-1234'''
+
+with open('.envrc', 'w') as opend_file:
+    opend_file.write(text)
