@@ -30,6 +30,6 @@ print(m.group('IP'))
 #r = r'\[(?P<Time>\d\d/\w{3}/\d{4}:\d{2}:\d{2}:\d{2})\]'
 
 m = re.search(r'\[(?P<Time>\d\d/\w{3}/\d{4}:\d{2}:\d{2}:\d{2})\]', line)
-
+        
 print(m)
 #print(m.group('Time'))
